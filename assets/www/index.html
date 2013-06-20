@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+	     <title>PhoneGap Speech Demo</title>
+	</head>
+	<body>
+		
+		<link type="text/css" rel="stylesheet" href="sample.css"></link>
+		     
+		<div class="tab-set" id="tab-set">
+		
+			<div id="tab-list" class="tab-list" >
+		  		<a>Recognition</a>
+		  		<a>TTS</a>
+			</div>
+		     
+		     <!-- Buttons -->
+		     <!-- 
+		     <input id="init-speech" onclick="doInit()" type="button" value="Init Speech"  />
+		     <input id="cleanup" onclick="doCleanup()" type="button" value="Cleanup"  />
+		     <hr>
+		     -->
+		     
+			<div id="tab-content" class="tab-content">
+					  
+				<div class="tab-data">			  
+				  <P>Recognition Type:
+				  <SELECT id="reco-type" width="100%" SINGLE>
+					<OPTION selected="selected" value="dictation">Dictation</OPTION>
+					<OPTION value="websearch">Web Search</OPTION>
+				  </SELECT>
+				  </P>
+				  <P>Language:
+				  <SELECT id="reco-language" width="100%" SINGLE>
+					<OPTION selected="selected" value="en_us">US English</OPTION>
+					<OPTION value="es_es">Spanish</OPTION>
+					<OPTION value="fr_fr">French</OPTION>
+					<OPTION value="de_de">German</OPTION>
+				  </SELECT>
+				  </P>
+		          <input id="recognize" onclick="startRecognition()" type="button" value="Start Recognition" style="width: 100%; font-size: 12px; font-face: helvetica; color: #4B714B; font-weight: bold" />
+		          <input id="get-result" onclick="getResult()" type="button" value="Get Last Result" style="width: 100%; font-size: 12px; font-face: helvetica; color: #4B714B; font-weight: bold" />
+		
+				 </div>
+				 
+				 <div class="tab-data">
+		          <p>TTS Text:<input id="tts-text" type="text" value="" /></p>
+				  <P>Language:
+				  <SELECT id="tts-language" width="100%" SINGLE>
+					<OPTION selected="selected" value="en_us">US English</OPTION>
+					<OPTION value="es_es">Spanish</OPTION>
+					<OPTION value="fr_fr">French</OPTION>
+					<OPTION value="de_de">German</OPTION>
+				  </SELECT>
+				  </P>
+		          <input id="play-tts" onclick="playTTS()" type="button" value="Play TTS" style="width: 100%; font-size: 12px; font-face: helvetica; color: #4B714B; font-weight: bold"  />
+		         </div>
+		         
+			</div>
+			
+		</div>	
+          
+          <!-- Place Holder for placing the result -->
+          <div id="result"></div>
+ 
+ 		 <div id="reco-dialog" class="reco-dialog">
+     		<div id="reco-dialog-main" class="reco-dialog-main">
+          		<p>Listening...</p>
+          		<HR>
+          		<div id="volume-level" class="volume-level"></div>
+          		<HR>
+          		<input disabled=true id="stop-reco" onclick="stopRecognition()" type="button" value="Stop Recognition" style="width: 90%; font-size: 12px; font-face: helvetica; color: #4B714B; font-weight: bold" /> 
+     		</div>
+		 </div>
+		 
+ 		 <div id="tts-dialog" class="tts-dialog">
+     		<div id="tts-dialog-main" class="">
+          		<p>Playing...</p>
+          		<HR>
+          		<input disabled=true id="stop-tts" onclick="stopTTS()" type="button" value="Stop TTS" style="width: 90%; font-size: 12px; font-face: helvetica; color: #4B714B; font-weight: bold"  /> 
+     		</div>
+		 </div>
+  		 
+ 
+          <script type="text/javascript" src="cordova-2.6.0.js"></script>
+          <script type="text/javascript" src="nuancespeechkit.js"></script>
+          <script type="text/javascript" src="sample.js"></script>
+          <script type="text/javascript" >
+          setActiveTab(1);
+          
+          document.addEventListener('deviceready', function() {
+        	   //var initButton = document.getElementById("init-speech");
+        	   //var cleanUpButton = document.getElementById("cleanup");
+        	   doInit();
+        	   document.addEventListener('backbutton', function() { doCleanup(); navigator.app.exitApp(); }, true);   
+        	   //initButton.disabled=true;
+        	   //cleanUpButton.disabled=false;
+        	}, true);
+ 
+          </script>
+ 
+     </body>
+</html>

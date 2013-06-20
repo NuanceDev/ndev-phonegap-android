@@ -1,0 +1,103 @@
+     
+
+
+#reco-dialog {
+     visibility: hidden;
+     position: fixed;
+     left: 0px;
+     top: 0px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+     background-color: transparent;
+     background-image:url(transparent.png);
+}
+
+#reco-dialog-main {
+     width: 85%;
+     margin: 10px auto;
+     background-color: #fff;
+     border:1px solid #000;
+     padding:5x;
+     text-align:center;
+}
+
+#volume-level {
+     width: 80%;
+     margin: 5px auto;
+     background-color: #fff;
+     border: none;
+     padding:5px;
+     text-align: center;
+}
+
+
+#tts-dialog {
+     visibility: hidden;
+     position: fixed;
+     left: 0px;
+     top: 0px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+     background-color: transparent;
+     background-image:url(transparent.png);
+}
+
+#tts-dialog-main {
+     width: 85%;
+     margin: 5px auto;
+     background-color: #fff;
+     border:1px solid #000;
+     padding:5px;
+     text-align:center;
+}
+
+
+div.tab-set div.tab-list{
+  height: 25px;
+  overflow: hidden;
+}
+
+div.tab-set div.tab-list a{
+  float: left;
+  width: 100px;
+  height: 25px;
+
+  padding-top: 3px;
+  border-radius: 10px; 
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-width: 0;
+  border: 1px solid black;
+    
+  text-align: center; 
+  vertical-align: middle;
+  
+  text-decoration: none;
+  font-weight: 900;
+  color: black;
+}
+
+div.tab-set div.tab-list a.Active{
+	background-color: #85A3FF;
+}
+
+div.tab-set div.tab-content{
+  clear: both;
+  border: 1px solid black;
+  overflow: hidden;
+  width: 100%;
+  height: 200px;
+}
+
+div.tab-set div.tab-content div.tab-data{
+  height: 100%;
+  width: 100%;
+  padding: 3px;
+  overflow: hidden;
+}
+
+
